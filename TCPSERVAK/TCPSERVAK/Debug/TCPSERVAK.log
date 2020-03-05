@@ -1,0 +1,4 @@
+﻿  TCPSERVAK.cpp
+d:\флешка\новая папка\tcpservak\tcpservak\tcpservak.cpp(201): warning C4018: '<': signed/unsigned mismatch
+d:\флешка\новая папка\tcpservak\tcpservak\tcpservak.cpp(218): warning C4018: '<': signed/unsigned mismatch
+  TCPSERVAK.vcxproj -> D:\флешка\Новая папка\TCPSERVAK\Debug\TCPSERVAK.exe
