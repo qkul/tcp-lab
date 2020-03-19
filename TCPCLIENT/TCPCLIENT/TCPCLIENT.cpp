@@ -1,24 +1,28 @@
 ﻿#include "pch.h"
 
+#include <chrono>
+#include <ctime>
 #include <stdio.h>
 #include <string.h>
 #include <conio.h>
 #include <ctype.h>
 
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #pragma comment(lib, "Ws2_32.lib")
 
 #include <winsock2.h>
 #include <windows.h>
-#include <iostream>
+#include<iostream>
 
 using namespace std;
 
 #define PORT 666
-#define SERVERADDR "127.0.0.1"
-
+//#define SERVERADDR "127.0.0.1"
+#define SERVERADDR "192.168.43.193"
 int main(int argc, char* argv[])
 {
+
 	char buff[1024];
 	printf("TCP DEMO CLIENT\n");
 
@@ -76,7 +80,7 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 
-	printf("Соединение с %s успешно установлено\n\
+	printf("Connected with %s successful done\n\
     Type quit for quit\n\n", SERVERADDR);
 
 	// Шаг 4 - чтение и передача сообщений
@@ -89,17 +93,17 @@ int main(int argc, char* argv[])
 		buff[100] = 0;
 
 		// выводим на экран 
-		printf("S=>C:%s", buff);
+		printf("\nS=>C:%s", buff);
 
 		// читаем пользовательский ввод с клавиатуры
-		printf("S<=C:"); 
+		printf("\nS<=C:"); 
 		//fgets(&buff[0], sizeof(buff) - 1, stdin);
 		string str = "";
 		char ch;
 		do
 		{
 			ch = _getche();
-			if ((int)ch != 3281) {
+			if ((int)ch != -32 && (int)ch != 13) {
 				str += ch;
 			}
 			else {
@@ -107,8 +111,8 @@ int main(int argc, char* argv[])
 			}
 
 		} while (true);
-
-		strcpy(buff, str.c_str());
+		
+		strcpy_s(buff, str.c_str());
 
 		// проверка на "quit"
 		if (!strcmp(&buff[0], "quit\n"))

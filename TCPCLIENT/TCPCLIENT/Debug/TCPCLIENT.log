@@ -1,3 +1,2 @@
 ﻿  TCPCLIENT.cpp
-d:\флешка\новая папка\tcpclient\tcpclient\tcpclient.cpp(111): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: see declaration of 'strcpy'
+  TCPCLIENT.vcxproj -> D:\флешка\Новая папка\lab\TCPCLIENT\Debug\TCPCLIENT.exe
